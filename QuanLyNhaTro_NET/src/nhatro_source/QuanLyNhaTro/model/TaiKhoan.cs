@@ -73,14 +73,4 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.model
                    $"}}";
         }
     }
-
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            TaiKhoan tk = new TaiKhoan(1, "2", "3", "4", DateTime.Now);
-            Console.WriteLine(tk.ToString());
-            Console.ReadLine();
-        }
-    }
 }

@@ -12,7 +12,6 @@
     <Folder Include="src\nhatro_source\QuanLyNhaTro\controller\" />
     <Folder Include="src\nhatro_source\QuanLyNhaTro\dao\" />
     <Folder Include="src\nhatro_source\QuanLyNhaTro\util\" />
-    <Folder Include="src\nhatro_source\QuanLyNhaTro\view\" />
   </ItemGroup>
 
 </Project>
