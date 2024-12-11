@@ -10,8 +10,14 @@
 
   <ItemGroup>
     <Folder Include="src\nhatro_source\QuanLyNhaTro\controller\" />
-    <Folder Include="src\nhatro_source\QuanLyNhaTro\dao\" />
-    <Folder Include="src\nhatro_source\QuanLyNhaTro\util\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="6.9.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
   </ItemGroup>
 
 </Project>
