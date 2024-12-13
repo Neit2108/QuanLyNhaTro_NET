@@ -55,14 +55,6 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
             return trangThaiList;
         }
 
-        public static void Main(string[] args)
-        {
-            var phongDichVuDAO = new Phong_DichVu_DAOImpl();
-            var trangThaiList = phongDichVuDAO.GetAllTrangThaiPhong(5);
-            foreach (var trangThai in trangThaiList)
-            {
-                Console.WriteLine(trangThai);
-            }
-        }
+        
     }
 }

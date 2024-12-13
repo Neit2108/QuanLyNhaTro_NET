@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
-using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.util;
+
 
 namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.util
 {

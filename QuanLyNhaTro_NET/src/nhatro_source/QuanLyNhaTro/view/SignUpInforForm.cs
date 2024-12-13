@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller;
 
 namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
 {
-    public partial class SignInForm : Form
+    public partial class SignUpInforForm : Form
     {
-        public SignInForm()
+        public SignUpInforForm()
         {
             InitializeComponent();
         }
-
     }
 }

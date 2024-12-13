@@ -14,7 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public KhachThueDAOImpl()
         {
             _connection = DatabaseConnection.GetConnection();
-            _connection.Open();
+            
         }
 
         public List<KhachThue> GetAllKhachThue()

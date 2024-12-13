@@ -14,7 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public TaiKhoanDAOImpl()
         {
             _connection = DatabaseConnection.GetConnection();
-            _connection.Open();
+            //_connection.Open();
         }
 
         public void AddTaiKhoan(string email, string password, string vaiTro)
@@ -212,10 +212,6 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
             }
         }
 
-        public static void Main(string[] args)
-        {
-            var taiKhoanDAO = new TaiKhoanDAOImpl();
-            taiKhoanDAO.UpdateTaiKhoan("ldtien.210804@gmail.com", "Chủ nhà");
-        }
+        
     }
 }

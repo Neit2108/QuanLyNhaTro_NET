@@ -72,14 +72,6 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
             return tienThuTienIch;
         }
 
-        public static void Main(string[] args)
-        {
-            var tienThuDAO = new TienThuDAOImpl();
-            var tienThuTienIchList = tienThuDAO.GetAll();
-            foreach (var tienThuTienIch in tienThuTienIchList)
-            {
-                Console.WriteLine(tienThuTienIch.MaTienThu);
-            }
-        }
+        
     }
 }

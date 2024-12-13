@@ -60,11 +60,5 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
             }
             return coSoVatChatList;
         }
-
-        public static void Main(string[] args)
-        {
-            ICoSoVatChatDAO coSoVatChatDAO = new CoSoVatChatDAOImpl();
-            Console.WriteLine(coSoVatChatDAO.GetAllCoSoVatChat(4));
-        }
     }
 }

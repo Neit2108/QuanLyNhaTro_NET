@@ -42,7 +42,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.util
         // Hàm mã hóa mật khẩu
         private static byte[] HashPassword(char[] password, byte[] salt)
         {
-            using (var rfc2898DeriveBytes = new Rfc2898DeriveBytes(password, salt, Iterations, HashAlgorithmName.SHA256))
+            using (var rfc2898DeriveBytes = new Rfc2898DeriveBytes(new string(password), salt, Iterations, HashAlgorithmName.SHA256))
             {
                 return rfc2898DeriveBytes.GetBytes(KeyLength / 8); // Convert bits to bytes
             }

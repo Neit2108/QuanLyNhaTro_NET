@@ -5,7 +5,8 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.util
     public static class Constant
     {
         // Database
-        public static readonly string Url = "Server=localhost,1433;Database=final_QuanLyNhaTro;Encrypt=True;TrustServerCertificate=True";
+        public static readonly string Url = "localhost,1433"; // Chỉ định host và port
+        public static readonly string Database = "final_QuanLyNhaTro";
         public static readonly string Username = "sa";
         public static readonly string Password = "23102001";
 

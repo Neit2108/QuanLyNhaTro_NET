@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
 
-namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.Util
+namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.util
 {
     public class Authenticator
     {
@@ -84,10 +84,6 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.Util
             return null;
         }
 
-        public static void Main(string[] args)
-        {
-            string input = "21/08/2004";
-            Console.WriteLine(NormalizeDate(input));
-        }
+        
     }
 }

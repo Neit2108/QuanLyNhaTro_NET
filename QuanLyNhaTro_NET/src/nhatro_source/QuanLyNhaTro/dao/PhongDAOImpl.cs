@@ -212,15 +212,5 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
             }
         }
 
-        public static void Main(string[] args)
-        {
-            var phongDAO = new PhongDAOImpl();
-            var phongs = phongDAO.GetAllPhong();
-            Console.WriteLine(phongs.Count);
-            foreach (var phong in phongs)
-            {
-                Console.WriteLine(phong.MaPhong);
-            }
-        }
     }
 }
