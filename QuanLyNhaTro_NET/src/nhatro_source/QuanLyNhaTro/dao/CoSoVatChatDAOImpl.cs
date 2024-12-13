@@ -14,15 +14,21 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public CoSoVatChatDAOImpl()
         {
             _connection = DatabaseConnection.GetConnection();
-            _connection.Open();
+            if(_connection.State == ConnectionState.Closed)
+            {
+                _connection.Open(); 
+            }
+           
         }
 
         public CoSoVatChat GetCoSoVatChat(int maCoSoVatChat)
         {
             string query = "SELECT * FROM CoSoVatChat WHERE maCSVC = @maCSVC";
+            
             using (var cmd = new SqlCommand(query, _connection))
             {
                 cmd.Parameters.AddWithValue("@maCSVC", maCoSoVatChat);
+                
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())

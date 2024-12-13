@@ -158,6 +158,8 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             // Initial service data
             string[,] priceData = new string[,]
             {
+                { "Tiền phòng", "100", "Tính theo tháng"},
+                { "Tiền cọc", "100", "Sẽ được hoàn trả khi hết hợp đồng"},
                 { "Internet", "100.000", "Tính theo tháng" },
                 { "Điện", "4.000", "Tính theo số" },
                 { "Nước", "100.000", "Tính theo đầu người" },

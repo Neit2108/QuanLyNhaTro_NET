@@ -55,7 +55,8 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             Panel panel = new Panel
             {
                 BorderStyle = BorderStyle.FixedSingle,
-                Padding = new Padding(10)
+                Padding = new Padding(10),
+                Dock = DockStyle.Left
             };
 
             TableLayoutPanel layout = new TableLayoutPanel
@@ -139,61 +140,12 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             panel.Controls.Add(flowLayout);
             return panel;
         }
-
-        //private Panel CreateMainTablePanel()
-        //{
-        //    Panel panel = new Panel();
-        //    panel.BorderStyle = BorderStyle.FixedSingle;
-
-        //    // Search panel
-        //    Panel searchPanel = new Panel { Dock = DockStyle.Top, Height = 50 };
-        //    searchField = new TextBox { Size = new Size(200, 25), Location = new Point(80, 12) };
-        //    searchBtn = new Button { Text = "Tìm", Size = new Size(60, 25), Location = new Point(290, 10) };
-        //    Label searchLabel = new Label { Text = "Tìm kiếm:", Location = new Point(10, 15) };
-
-        //    searchPanel.Controls.AddRange(new Control[] { searchLabel, searchField, searchBtn });
-        //    panel.Controls.Add(searchPanel);
-
-        //    // Main table
-        //    mainTable = new DataGridView
-        //    {
-        //        Dock = DockStyle.Fill,
-        //        AllowUserToAddRows = false,
-        //        AllowUserToDeleteRows = false,
-        //        ReadOnly = true,
-        //        AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-        //        RowHeadersVisible = false,
-        //        ColumnHeadersVisible = true,
-
-        //        BackgroundColor = Color.White,
-        //        AllowUserToResizeColumns = false,
-        //        AllowUserToResizeRows = false,
-        //        ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        //    };
-
-        //    // Add columns
-        //    mainTable.Columns.AddRange(new DataGridViewColumn[]
-        //    {
-        //        new DataGridViewTextBoxColumn { HeaderText = "Mã hợp đồng", Name = "MaHD" },
-        //        new DataGridViewTextBoxColumn { HeaderText = "Mã phòng", Name = "MaPhong" },
-        //        new DataGridViewTextBoxColumn { HeaderText = "Mã khách", Name = "MaKhach" },
-        //        new DataGridViewTextBoxColumn { HeaderText = "Tiền cọc", Name = "TienCoc" },
-        //        new DataGridViewTextBoxColumn { HeaderText = "Ngày thuê", Name = "NgayThue" },
-        //        new DataGridViewTextBoxColumn { HeaderText = "Thời hạn hợp đồng", Name = "ThoiHan" },
-        //        new DataGridViewTextBoxColumn { HeaderText = "Ngày tạo", Name = "NgayTao" },
-        //        new DataGridViewTextBoxColumn { HeaderText = "Trạng thái", Name = "TrangThai" }
-        //    });
-
-        //    panel.Controls.Add(mainTable);
-        //    return panel;
-        //}
-
         private Panel CreateMainTablePanel()
         {
             Panel panel = new Panel
             {
                 BorderStyle = BorderStyle.FixedSingle,
-                Dock = DockStyle.Fill
+                Dock = DockStyle.Right
             };
 
             // Create TableLayoutPanel to manage layout

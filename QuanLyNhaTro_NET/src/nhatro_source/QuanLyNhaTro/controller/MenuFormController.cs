@@ -14,6 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
         private NoticeForm noticeForm;
         private NewHomePage homePage;
         private ContractForm contractForm;
+        private InvoiceForm invoiceForm;
         public MenuFormController(MenuForm menuForm)
         {
             this.menuForm = menuForm;
@@ -32,6 +33,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
             this.menuForm.HomePageBtn.Click += HomePageBtn_Click;
             this.menuForm.ThongbaoBtn.Click += ThongbaoBtn_Click;
             this.menuForm.HopdongBtn.Click += ContractBtn_Click;
+            this.menuForm.HoadonBtn.Click += InvoiceBtn_Click;
             this.menuForm.CircularPictureBox.MouseClick -= HandleUserLbl; 
             this.menuForm.CircularPictureBox.MouseClick += HandleUserLbl;
 
@@ -111,6 +113,19 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
             contractForm.Margin = new Padding(0);
             menuForm.MainPanel.Controls.Add(contractForm);
             UpdateButtonStates(menuForm.HopdongBtn);
+        }
+
+        private void InvoiceBtn_Click(object sender, EventArgs e)
+        {
+            menuForm.MainPanel.Controls.Clear();
+            if (invoiceForm == null || invoiceForm.IsDisposed)
+            {
+                invoiceForm = new InvoiceForm();
+            }
+            invoiceForm.Dock = DockStyle.Fill;
+            invoiceForm.Margin = new Padding(0);
+            menuForm.MainPanel.Controls.Add(invoiceForm);
+            UpdateButtonStates(menuForm.HoadonBtn);
         }
 
         private void UpdateButtonStates(Button activeButton)

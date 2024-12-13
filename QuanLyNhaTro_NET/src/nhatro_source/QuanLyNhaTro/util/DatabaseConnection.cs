@@ -18,7 +18,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.util
             try
             {
                 // Sử dụng các phần đã định nghĩa để tạo chuỗi kết nối
-                string connectionString = $"Server={Constant.Url};Database={Constant.Database};User Id={Constant.Username};Password={Constant.Password};Encrypt=True;TrustServerCertificate=True;";
+                string connectionString = $"Server={Constant.Url};Database={Constant.Database};User Id={Constant.Username};Password={Constant.Password};Encrypt=True;TrustServerCertificate=True;MultipleActiveResultSets=True;";
                 con = new SqlConnection(connectionString);
                 con.Open();
                 Console.WriteLine("Kết nối thành công!"); // Debug thông báo kết nối

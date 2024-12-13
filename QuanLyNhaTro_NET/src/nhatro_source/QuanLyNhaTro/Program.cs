@@ -17,18 +17,13 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro
         {   
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Form f = new Form();
-            //f.Text = "Quản lý nhà trọ";
-            //f.WindowState = FormWindowState.Maximized;
-            //f.StartPosition = FormStartPosition.CenterScreen;
-            ////NewHomePage newHomePage = new NewHomePage();
-            //NoticeForm noticeForm = new NoticeForm();
-            ////f.Controls.Add(newHomePage);
-            //f.Controls.Add(noticeForm);
-            // In your main form or parent control
-            //ContractForm contractForm = new ContractForm();
-            //f.Controls.Add(contractForm);
-            Application.Run(new SignInForm());
+            Form f = new Form();
+            f.Text = "Quản lý nhà trọ";
+            f.WindowState = FormWindowState.Maximized;
+            f.StartPosition = FormStartPosition.CenterScreen;
+            InvoiceForm invoiceForm = new InvoiceForm();
+            f.Controls.Add(invoiceForm);
+            Application.Run(new DetailInvoiceForm());
 
         }
     }
