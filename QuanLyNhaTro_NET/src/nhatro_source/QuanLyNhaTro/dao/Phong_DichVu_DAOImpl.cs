@@ -14,7 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public Phong_DichVu_DAOImpl()
         {
             _connection = DatabaseConnection.GetConnection();
-            _connection.Open();
+            
         }
 
         public List<DichVu> GetAllDichVuPhong(int maPhong)

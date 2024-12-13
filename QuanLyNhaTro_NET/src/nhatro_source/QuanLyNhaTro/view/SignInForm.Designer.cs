@@ -144,6 +144,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.labelSignUpPrompt);
             this.Controls.Add(this.linkSignUp);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "SignInForm";
             this.Text = "Đăng Nhập";
             new SignInController(this).InitController();

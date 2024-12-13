@@ -1,161 +1,49 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Drawing;
-//using System.Windows.Forms;
-//using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao;
-//using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.model;
-
-//namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
-//{
-//    partial class NewHomePage : UserControl
-//    {
-//        private TableLayoutPanel Layout;
-//        private BorderStyle BorderStyle;
-
-//        private void InitializeComponent()
-//        {
-//            this.Layout = new TableLayoutPanel
-//            {
-//                ColumnCount = 3,
-//                RowCount = 0,
-//                Dock = DockStyle.Fill,
-//                Padding = new Padding(10),
-//                AutoScroll = true,
-//            };
-
-//            this.BorderStyle = BorderStyle.FixedSingle;
-
-//            // Hiển thị thông tin phòng
-//            var phongDAO = new PhongDAOImpl();
-//            var nhaTroDAO = new NhaTroDAOImpl();
-//            List<NhaTro> nhaTroList = nhaTroDAO.GetAllNhaTroByMaChuNha(10);
-//            int j = 0;
-
-//            foreach (var x in nhaTroList)
-//            {
-//                List<Phong> phongs = phongDAO.GetAllPhongByMaNhaTro(x.MaNhaTro);
-
-//                foreach (var phong in phongs)
-//                {
-//                    if (j == 8)
-//                    {
-//                        break;
-//                    }
-
-//                    var kieuPhongDAO = new KieuPhongDAOImpl();
-//                    string loaiPhong = kieuPhongDAO.GetKieuPhong(phong.MaKieuPhong).LoaiPhong;
-
-//                    if (phong.TrangThai.Equals("Chưa thuê", StringComparison.OrdinalIgnoreCase))
-//                    {
-//                        j++;
-//                        this.Controls.Add(CreatePhongPanel(phong.MaPhong, phong.TenPhong, phong.MaNhaTro, loaiPhong, phongDAO.GetGiaPhong(phong.MaPhong), phong.UrlImage));
-//                    }
-//                }
-//            }
-//        }
-
-//        private Panel CreatePhongPanel(int maPhong, string tenPhong, int maNhaTro, string loaiPhong, double giaPhong, string anhPhong)
-//        {
-//            var phongPanel = new Panel
-//            {
-//                BorderStyle = BorderStyle.FixedSingle,
-//                Size = new Size(200, 250),
-//                Margin = new Padding(5),
-//            };
-
-//            var imageLabel = new PictureBox
-//            {
-//                BorderStyle = BorderStyle.FixedSingle,
-//                Size = new Size(150, 120),
-//                SizeMode = PictureBoxSizeMode.StretchImage,
-//                Image = Image.FromFile("D:\\MyProjects\\final_QuanLyNhaTro\\src\\resources\\house_619153.png"),
-//            };
-
-//            phongPanel.Controls.Add(imageLabel);
-//            imageLabel.Dock = DockStyle.Top;
-
-//            var infoPanel = new Panel
-//            {
-//                Dock = DockStyle.Fill,
-//                Padding = new Padding(5),
-//            };
-
-//            phongPanel.Controls.Add(infoPanel);
-
-//            var detailInfoPanel = new TableLayoutPanel
-//            {
-//                RowCount = 4,
-//                ColumnCount = 1,
-//                Dock = DockStyle.Top,
-//            };
-
-//            detailInfoPanel.Controls.Add(new Label { Text = "Tên Phòng: " + tenPhong, AutoSize = true });
-//            detailInfoPanel.Controls.Add(new Label { Text = "Nhà Trọ: " + maNhaTro, AutoSize = true });
-//            detailInfoPanel.Controls.Add(new Label { Text = "Loại Phòng: " + loaiPhong, AutoSize = true });
-//            detailInfoPanel.Controls.Add(new Label { Text = "Giá: " + giaPhong, AutoSize = true });
-
-//            infoPanel.Controls.Add(detailInfoPanel);
-
-//            var buttonPanel = new FlowLayoutPanel
-//            {
-//                FlowDirection = FlowDirection.RightToLeft,
-//                Dock = DockStyle.Bottom,
-//            };
-
-//            var chiTietBtn = CreateDetailButton("Chi Tiết");
-//            chiTietBtn.Click += (sender, e) =>
-//            {
-//                var detailRoom = new DetailRoom();//maPhong);
-//                detailRoom.ShowDialog();
-//            };
-
-//            buttonPanel.Controls.Add(chiTietBtn);
-//            infoPanel.Controls.Add(buttonPanel);
-
-//            return phongPanel;
-//        }
-
-//        private Button CreateDetailButton(string text)
-//        {
-//            return new Button
-//            {
-//                Text = text,
-//                Font = new Font("Arial", 12, FontStyle.Regular),
-//                Size = new Size(80, 30),
-//            };
-//        }
-//    }
-//}
-
-using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao;
+﻿using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao;
 using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.model;
-using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
 {
     partial class NewHomePage : UserControl
     {
         private TableLayoutPanel Layout;
-        private BorderStyle BorderStyle;
 
         private void InitializeComponent()
         {
             this.Layout = new TableLayoutPanel
             {
-                ColumnCount = 3,
-                RowCount = 0,
+                ColumnCount = 3,    // Đảm bảo có 3 cột
+                RowCount = 3,       // Đảm bảo có 3 hàng (tổng cộng là 9 ô)
                 Dock = DockStyle.Fill,
-                Padding = new Padding(10),
-                AutoScroll = true,
+                Padding = new Padding(5),  // Tăng khoảng cách giữa các phần tử
+                AutoScroll = false,    // Tắt cuộn
+                Margin = new Padding(0),
+                CellBorderStyle = TableLayoutPanelCellBorderStyle.Single // Thêm viền cho các ô
             };
+
+            // Đảm bảo mỗi cột có chiều rộng đều nhau
+            float columnWidth = 33.33F;
+            for (int i = 0; i < 3; i++)
+            {
+                this.Layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, columnWidth));
+            }
+
+            // Đảm bảo các hàng có chiều cao tự động (vừa đủ cho nội dung)
+            float rowHeight = 33.33F;
+            for (int i = 0; i < 3; i++)
+            {
+                this.Layout.RowStyles.Add(new RowStyle(SizeType.Percent, rowHeight));
+            }
 
             this.BorderStyle = BorderStyle.FixedSingle;
 
-            // Hiển thị thông tin phòng
             var phongDAO = new PhongDAOImpl();
             var nhaTroDAO = new NhaTroDAOImpl();
             List<NhaTro> nhaTroList = nhaTroDAO.GetAllNhaTroByMaChuNha(10);
-            Layout.RowCount = (int)Math.Ceiling(nhaTroList.Count / 3.0); // hoặc số lượng hàng thích hợp
+
             int j = 0;
 
             foreach (var x in nhaTroList)
@@ -164,7 +52,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
 
                 foreach (var phong in phongs)
                 {
-                    if (j == 8)
+                    if (j == 9)
                     {
                         break;
                     }
@@ -175,13 +63,13 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
                     if (phong.TrangThai.Equals("Chưa thuê", StringComparison.OrdinalIgnoreCase))
                     {
                         j++;
-                        // Thêm panel phòng vào Layout thay vì this.Controls
                         Layout.Controls.Add(CreatePhongPanel(phong.MaPhong, phong.TenPhong, phong.MaNhaTro, loaiPhong, phongDAO.GetGiaPhong(phong.MaPhong), phong.UrlImage));
                     }
                 }
+
+               
             }
 
-            // Thêm Layout vào UserControl
             this.Controls.Add(Layout);
         }
 
@@ -190,71 +78,80 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             var phongPanel = new Panel
             {
                 BorderStyle = BorderStyle.FixedSingle,
-                Size = new Size(200, 250),
-                Margin = new Padding(5),
+                Margin = new Padding(5), // Khoảng cách giữa các panel
+                AutoSize = true,
+                Dock = DockStyle.Fill, // Đảm bảo panel con lấp đầy không gian của parent panel
+                Padding = new Padding(0)
             };
 
-
+            // Tạo vùng hiển thị hình ảnh
             var imageLabel = new PictureBox
             {
                 BorderStyle = BorderStyle.FixedSingle,
-                Size = new Size(150, 120),
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                Image = Image.FromFile("D:\\MyProjects\\final_QuanLyNhaTro\\src\\resources\\house_619153.png"),
+                SizeMode = PictureBoxSizeMode.Zoom, // Đảm bảo ảnh tỉ lệ phù hợp
+                Height = 120, // Điều chỉnh chiều cao ảnh cho phù hợp
+                Dock = DockStyle.Top, // Đảm bảo ảnh chiếm phần trên của panel
+                Margin = new Padding(5) // Thêm margin để tránh ảnh dính vào các viền
             };
 
-            phongPanel.Controls.Add(imageLabel);
-            imageLabel.Dock = DockStyle.Top;
-
-            var infoPanel = new Panel
+            try
             {
-                Dock = DockStyle.Fill,
-                Padding = new Padding(5),
-            };
-
-            phongPanel.Controls.Add(infoPanel);
-
-            var detailInfoPanel = new TableLayoutPanel
+                imageLabel.Image = Image.FromFile(anhPhong);  // Dùng đường dẫn hình ảnh động
+            }
+            catch (Exception ex)
             {
-                RowCount = 4,
+                MessageBox.Show("Không thể tải hình ảnh: " + ex.Message);
+                imageLabel.Image = null;
+            }
+
+            var infoPanel = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill, // Điều chỉnh infoPanel để chiếm toàn bộ không gian còn lại trong phongPanel
+                AutoSize = true,
+                Margin = new Padding(5),
                 ColumnCount = 1,
-                Dock = DockStyle.Top,
+                RowCount = 5 // 4 labels + 1 button
             };
 
-            detailInfoPanel.Controls.Add(new Label { Text = "Tên Phòng: " + tenPhong, AutoSize = true });
-            detailInfoPanel.Controls.Add(new Label { Text = "Nhà Trọ: " + maNhaTro, AutoSize = true });
-            detailInfoPanel.Controls.Add(new Label { Text = "Loại Phòng: " + loaiPhong, AutoSize = true });
-            detailInfoPanel.Controls.Add(new Label { Text = "Giá: " + giaPhong, AutoSize = true });
+            // Thêm labels vào infoPanel
+            var labels = new[] {
+                new Label { Text = "Tên Phòng: " + tenPhong, AutoSize = true },
+                new Label { Text = "Nhà Trọ: " + maNhaTro, AutoSize = true },
+                new Label { Text = "Loại Phòng: " + loaiPhong, AutoSize = true },
+                new Label { Text = "Giá: " + giaPhong, AutoSize = true }
+            };
 
-            infoPanel.Controls.Add(detailInfoPanel);
-
-            var buttonPanel = new FlowLayoutPanel
+            // Thêm các label vào infoPanel
+            foreach (var label in labels)
             {
-                FlowDirection = FlowDirection.RightToLeft,
-                Dock = DockStyle.Bottom,
+                label.Dock = DockStyle.Fill; // Đảm bảo rằng các label sẽ chiếm không gian sẵn có
+                label.Margin = new Padding(5);
+                infoPanel.Controls.Add(label);
+            }
+
+            // Nút Chi Tiết
+            var chiTietBtn = new Button
+            {
+                Text = "Chi Tiết",
+                Font = new Font("Arial", 12, FontStyle.Regular),
+                Size = new Size(100, 30),
+                Margin = new Padding(5),
+                Anchor = AnchorStyles.Bottom | AnchorStyles.Right,
+                Dock = DockStyle.None
             };
 
-            var chiTietBtn = CreateDetailButton("Chi Tiết");
             chiTietBtn.Click += (sender, e) =>
             {
-                var detailRoom = new DetailRoom();//maPhong);
-                detailRoom.ShowDialog();
+                var detailRoom = new DetailRoom(maPhong);
+                detailRoom.Show();
             };
 
-            buttonPanel.Controls.Add(chiTietBtn);
-            infoPanel.Controls.Add(buttonPanel);
-
+            // Thêm vào các panel
+            infoPanel.Controls.Add(chiTietBtn);
+            phongPanel.Controls.Add(infoPanel);
+            phongPanel.Controls.Add(imageLabel);
             return phongPanel;
         }
 
-        private Button CreateDetailButton(string text)
-        {
-            return new Button
-            {
-                Text = text,
-                Font = new Font("Arial", 12, FontStyle.Regular),
-                Size = new Size(80, 30),
-            };
-        }
     }
 }

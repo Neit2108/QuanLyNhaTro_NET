@@ -14,7 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public ThongBaoDAOImpl()
         {
             _connection = DatabaseConnection.GetConnection();
-            _connection.Open();
+            
         }
 
         public void AddThongBao(int maNguoiGui, int maNguoiNhan, string noiDung, string trangThai, int maPhong, string loaiThongBao)

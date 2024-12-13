@@ -11,7 +11,9 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
     {
         private readonly MenuForm menuForm;
         private SignInForm signInForm;
-
+        private NoticeForm noticeForm;
+        private NewHomePage homePage;
+        private ContractForm contractForm;
         public MenuFormController(MenuForm menuForm)
         {
             this.menuForm = menuForm;
@@ -27,13 +29,9 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
             }
 
             this.menuForm.DangxuatBtn.Click += HandleDangXuatBtn;
-            //this.menuForm.HomePageBtn.Click += HandleHomePageBtn;
-            //this.menuForm.QuanlyBtn.Click += HandleKhachThueBtn;
-            //this.menuForm.PctBtn.Click += HandleQuanLyPhongBtn;
-            //this.menuForm.HopdongBtn.Click += HandleContractBtn;
-            //this.menuForm.HoadonBtn.Click += HandleInvoiceBtn;
-            //this.menuForm.NhaBtn.Click += HandleHouseBtn;
-            //this.menuForm.ThongbaoBtn.Click += HandleNoticeBtn;
+            this.menuForm.HomePageBtn.Click += HomePageBtn_Click;
+            this.menuForm.ThongbaoBtn.Click += ThongbaoBtn_Click;
+            this.menuForm.HopdongBtn.Click += ContractBtn_Click;
             this.menuForm.CircularPictureBox.MouseClick -= HandleUserLbl; 
             this.menuForm.CircularPictureBox.MouseClick += HandleUserLbl;
 
@@ -62,47 +60,9 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
             }
         }
 
-        //private void HandleKhachThueBtn(object sender, EventArgs e)
-        //{
-        //    this.menuForm.CardLayout.Show(this.menuForm.MainPanel, "QuanLyKhachThue");
-        //}
-
-        //private void HandleQuanLyPhongBtn(object sender, EventArgs e)
-        //{
-        //    this.menuForm.CardLayout.Show(this.menuForm.MainPanel, "QuanLyPhong");
-        //}
-
-        //private void HandleHomePageBtn(object sender, EventArgs e)
-        //{
-        //    this.menuForm.CardLayout.Show(this.menuForm.MainPanel, "HomePage");
-        //}
-
-        //private void HandleContractBtn(object sender, EventArgs e)
-        //{
-        //    this.menuForm.CardLayout.Show(this.menuForm.MainPanel, "HopDong");
-        //}
-
-        //private void HandleInvoiceBtn(object sender, EventArgs e)
-        //{
-        //    this.menuForm.CardLayout.Show(this.menuForm.MainPanel, "HoaDon");
-        //}
-
-        //private void HandleHouseBtn(object sender, EventArgs e)
-        //{
-        //    this.menuForm.CardLayout.Show(this.menuForm.MainPanel, "Nha");
-        //}
-
-        //private void HandleNoticeBtn(object sender, EventArgs e)
-        //{
-        //    this.menuForm.CardLayout.Show(this.menuForm.MainPanel, "ThongBao");
-        //}
-
-       
-
         private void HandleUserLbl(object sender, MouseEventArgs e)
         {
             AccountInforForm accountForm = null;
-            // Kiểm tra nếu form chưa mở, thì mở mới
             if (accountForm == null || accountForm.IsDisposed)
             {
                 accountForm = new AccountInforForm();
@@ -110,9 +70,70 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
             }
             else
             {
-                // Form đã mở rồi, không làm gì
-                accountForm.Activate(); // Kích hoạt lại form nếu đã mở
+                accountForm.Activate();
             }
+        }
+
+        private void ThongbaoBtn_Click(object sender, EventArgs e)
+        {
+            menuForm.MainPanel.Controls.Clear();
+            if (noticeForm == null || noticeForm.IsDisposed)
+            {
+                noticeForm = new NoticeForm();
+            }
+            noticeForm.Dock = DockStyle.Fill;
+            noticeForm.Margin = new Padding(0);
+            menuForm.MainPanel.Controls.Add(noticeForm);
+            UpdateButtonStates(menuForm.ThongbaoBtn);
+        }
+
+        private void HomePageBtn_Click(object sender, EventArgs e)
+        {
+            menuForm.MainPanel.Controls.Clear();
+            if (homePage == null || homePage.IsDisposed)
+            {
+                homePage = new NewHomePage();
+            }
+            homePage.Dock = DockStyle.Fill;
+            homePage.Margin = new Padding(0);
+            menuForm.MainPanel.Controls.Add(homePage);
+            UpdateButtonStates(menuForm.HomePageBtn);
+        }
+
+        private void ContractBtn_Click(Object sender, EventArgs e)
+        {
+            menuForm.MainPanel.Controls.Clear();
+            if(contractForm == null || contractForm.IsDisposed)
+            {
+                contractForm = new ContractForm();
+            }
+            contractForm.Dock = DockStyle.Fill;
+            contractForm.Margin = new Padding(0);
+            menuForm.MainPanel.Controls.Add(contractForm);
+            UpdateButtonStates(menuForm.HopdongBtn);
+        }
+
+        private void UpdateButtonStates(Button activeButton)
+        {
+            // Reset all buttons to default state
+            Button[] buttons = new Button[]
+            {
+            menuForm.HomePageBtn,
+            menuForm.PctBtn,
+            menuForm.NhaBtn,
+            menuForm.HopdongBtn,
+            menuForm.QuanlyBtn,
+            menuForm.HoadonBtn,
+            menuForm.ThongbaoBtn
+            };
+
+            foreach (Button btn in buttons)
+            {
+                btn.BackColor = Color.FromArgb(135, 206, 250); // Default color
+            }
+
+            // Highlight active button
+            activeButton.BackColor = Color.FromArgb(70, 130, 180); // Darker blue for active button
         }
 
     }

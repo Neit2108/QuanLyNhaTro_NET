@@ -14,7 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public HopDongDAOImpl()
         {
             _conn = DatabaseConnection.GetConnection();
-            _conn.Open();
+            
         }
 
         public void AddHopDong(int maPhong, int maKhachThue, double tienCoc, DateTime ngayThue, int thoiHanHopDong, string trangThai, int soNguoi)
@@ -60,7 +60,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                             reader.GetInt32("maHopDong"),
                             reader.GetInt32("maPhong"),
                             reader.GetInt32("maKhachThue"),
-                            reader.GetDouble("tienCoc"),
+                            Convert.ToDouble(reader.GetDecimal("tienCoc")),
                             reader.GetInt32("soNguoi"),
                             reader.GetDateTime("ngayThue"),
                             reader.GetInt32("thoiHanHopDong"),
@@ -87,7 +87,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                             reader.GetInt32("maHopDong"),
                             reader.GetInt32("maPhong"),
                             reader.GetInt32("maKhachThue"),
-                            reader.GetDouble("tienCoc"),
+                            Convert.ToDouble(reader.GetDecimal("tienCoc")),
                             reader.GetInt32("soNguoi"),
                             reader.GetDateTime("ngayThue"),
                             reader.GetInt32("thoiHanHopDong"),
@@ -116,7 +116,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                             reader.GetInt32("maHopDong"),
                             reader.GetInt32("maPhong"),
                             reader.GetInt32("maKhachThue"),
-                            reader.GetDouble("tienCoc"),
+                            Convert.ToDouble(reader.GetDecimal("tienCoc")),
                             reader.GetInt32("soNguoi"),
                             reader.GetDateTime("ngayThue"),
                             reader.GetInt32("thoiHanHopDong"),
@@ -149,7 +149,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                             reader.GetInt32("maHopDong"),
                             reader.GetInt32("maPhong"),
                             reader.GetInt32("maKhachThue"),
-                            reader.GetDouble("tienCoc"),
+                            Convert.ToDouble(reader.GetDecimal("tienCoc")),
                             reader.GetInt32("soNguoi"),
                             reader.GetDateTime("ngayThue"),
                             reader.GetInt32("thoiHanHopDong"),

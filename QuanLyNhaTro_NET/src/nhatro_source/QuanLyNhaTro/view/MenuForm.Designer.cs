@@ -21,23 +21,26 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
         private PictureBox circularPictureBox;
 
         private void InitializeComponents()
-        { 
+        {
             this.Text = "Menu Form";
             this.StartPosition = FormStartPosition.CenterScreen;
-            //this.Size = new Size(800, 600);
             this.WindowState = FormWindowState.Maximized;
 
             buttonPanel = new Panel
             {
                 Dock = DockStyle.Left,
                 Width = 200,
-                BackColor = Color.FromArgb(240, 248, 255)
+                BackColor = Color.FromArgb(240, 248, 255),
+                Margin = new Padding(0)
             };
 
             mainPanel = new Panel
             {
                 Dock = DockStyle.Fill,
-                BackColor = Color.White
+                BackColor = Color.White,
+                Margin = new Padding(0),
+                AutoScroll = true,
+                Padding = new Padding(10)  
             };
 
             Label menuLabel = new Label
@@ -81,11 +84,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
                 Padding = new Padding(10, 10, 10, 10)
             };
 
-            Button[] buttons = new Button[]
-            {
-                homePageBtn, pctBtn, nhaBtn, hopdongBtn,
-                quanlyBtn, hoadonBtn, thongbaoBtn
-            };
+            Button[] buttons = new Button[] { homePageBtn, pctBtn, nhaBtn, hopdongBtn, quanlyBtn, hoadonBtn, thongbaoBtn };
 
             foreach (Button btn in buttons)
             {
@@ -96,28 +95,28 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             Panel userPanel = new Panel
             {
                 Dock = DockStyle.Bottom,
-                Height = 100,  // Reduced height
+                Height = 100,
                 BackColor = Color.FromArgb(230, 230, 250)
             };
 
             circularPictureBox = new PictureBox
             {
-                Size = new Size(40, 40),  
+                Size = new Size(40, 40),
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Image = image
             };
 
-            dangxuatBtn.Size = new Size(75, 30); 
-            dangxuatBtn.Font = new Font("Arial", 9, FontStyle.Bold);  
+            dangxuatBtn.Size = new Size(75, 30);
+            dangxuatBtn.Font = new Font("Arial", 9, FontStyle.Bold);
 
             circularPictureBox.Location = new Point(
                 (userPanel.Width - circularPictureBox.Width) / 2,
-                10  
+                10
             );
 
             dangxuatBtn.Location = new Point(
                 (userPanel.Width - dangxuatBtn.Width) / 2,
-                circularPictureBox.Bottom + 5  
+                circularPictureBox.Bottom + 5
             );
 
             userPanel.Controls.Add(circularPictureBox);
@@ -132,16 +131,19 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             buttonPanel.Controls.Add(userPanel);
             buttonPanel.Controls.Add(menuLabel);
 
-            NewHomePage newHomePage = new NewHomePage()
+            mainPanel.Controls.Clear();
+            NewHomePage newHomePage = new NewHomePage
             {
-                Dock = DockStyle.Fill
+                Dock = DockStyle.Fill,
+                Margin = new Padding(0)
             };
             mainPanel.Controls.Add(newHomePage);
+
+            this.Controls.Clear();
+
             
-            
-            this.Controls.Add(buttonPanel);
-            this.Controls.Add(mainPanel);
-            
+            this.Controls.Add(mainPanel);    
+            this.Controls.Add(buttonPanel);  
         }
 
         private Button CreateRoundedButton(string text)
@@ -179,70 +181,27 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             Application.Exit();
         }
 
-        public Button HomePageBtn
+        private void SwitchContent(UserControl newContent)
         {
-            get { return homePageBtn; }
-            set { homePageBtn = value; }
+            mainPanel.Controls.Clear();
+            newContent.Dock = DockStyle.Fill;
+            newContent.Margin = new Padding(0);
+            mainPanel.Controls.Add(newContent);
+            newContent.BringToFront();
         }
 
-        public Button DangxuatBtn
-        {
-            get { return dangxuatBtn; }
-            set { dangxuatBtn = value; }
-        }
+        //create getter setter fol all components
+        public Button HomePageBtn { get => homePageBtn; set => homePageBtn = value; }
+        public Button DangxuatBtn { get => dangxuatBtn; set => dangxuatBtn = value; }
+        public Button QuanlyBtn { get => quanlyBtn; set => quanlyBtn = value; }
+        public Button HopdongBtn { get => hopdongBtn; set => hopdongBtn = value; }
+        public Button NhaBtn { get => nhaBtn; set => nhaBtn = value; }
+        public Button PctBtn { get => pctBtn; set => pctBtn = value; }
+        public Button HoadonBtn { get => hoadonBtn; set => hoadonBtn = value; }
+        public Button ThongbaoBtn { get => thongbaoBtn; set => thongbaoBtn = value; }
+        public Panel ButtonPanel { get => buttonPanel; set => buttonPanel = value; }
+        public Panel MainPanel { get => mainPanel; set => mainPanel = value; }
+        public PictureBox CircularPictureBox { get => circularPictureBox; set => circularPictureBox = value; }
 
-        public Button QuanlyBtn
-        {
-            get { return quanlyBtn; }
-            set { quanlyBtn = value; }
-        }
-
-        public Button HopdongBtn
-        {
-            get { return hopdongBtn; }
-            set { hopdongBtn = value; }
-        }
-
-        public Button NhaBtn
-        {
-            get { return nhaBtn; }
-            set { nhaBtn = value; }
-        }
-
-        public Button PctBtn
-        {
-            get { return pctBtn; }
-            set { pctBtn = value; }
-        }
-
-        public Button HoadonBtn
-        {
-            get { return hoadonBtn; }
-            set { hoadonBtn = value; }
-        }
-
-        public Button ThongbaoBtn
-        {
-            get { return thongbaoBtn; }
-            set { thongbaoBtn = value; }
-        }
-
-        public Panel ButtonPanel
-        {
-            get { return buttonPanel; }
-            set { buttonPanel = value; }
-        }
-
-        public Panel MainPanel
-        {
-            get { return mainPanel; }
-            set { mainPanel = value; }
-        }
-
-        public PictureBox CircularPictureBox
-        {
-            get { return circularPictureBox; }
-            set { circularPictureBox = value; }
-        }
     }
 }

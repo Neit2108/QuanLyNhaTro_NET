@@ -20,6 +20,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             labelTitle = new Label();
             labelEmail = new Label();
             labelPassword = new Label();
