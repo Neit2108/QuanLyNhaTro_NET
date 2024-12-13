@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller;
 
 namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
 {
@@ -125,12 +126,22 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             circularPictureBox.Dock = DockStyle.None;
             dangxuatBtn.Dock = DockStyle.None;
 
+            new MenuFormController(this).Init();
+
             buttonPanel.Controls.Add(buttonContainer);
             buttonPanel.Controls.Add(userPanel);
             buttonPanel.Controls.Add(menuLabel);
 
+            NewHomePage newHomePage = new NewHomePage()
+            {
+                Dock = DockStyle.Fill
+            };
+            mainPanel.Controls.Add(newHomePage);
+            
+            
             this.Controls.Add(buttonPanel);
             this.Controls.Add(mainPanel);
+            
         }
 
         private Button CreateRoundedButton(string text)

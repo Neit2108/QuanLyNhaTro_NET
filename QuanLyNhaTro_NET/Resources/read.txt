@@ -1,0 +1,58 @@
+﻿27
+System.Func`1[System.String]
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+Mã khách : 13
+KhachThue{ maCCCD='123456789037', ten='Nguyễn Thị A1', ngaySinh='06/06/1992 00:00:00', gioiTinh='Nữ', soDienThoai='0123456714', diaChi='26 Hàng Bài', maKhach=5, maTaiKhoan=13 }
+Mã khách : 13
+KhachThue{ maCCCD='123456789037', ten='Nguyễn Thị A1', ngaySinh='06/06/1992 00:00:00', gioiTinh='Nữ', soDienThoai='0123456714', diaChi='26 Hàng Bài', maKhach=5, maTaiKhoan=13 }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+Mã khách : 13
+KhachThue{ maCCCD='001203043021', ten='Lê Dũng Tiến', ngaySinh='21/08/2004 00:00:00', gioiTinh='Nam', soDienThoai='0962745361', diaChi='Hà Nội', maKhach=13, maTaiKhoan=27 }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+27
+TaiKhoan{ maTaiKhoan='27', email='ldungtien.210804@gmail.com', password='/6ys9A+35M5f43ccP5kr8Q==:U8U+O8HCxrxjupbQWx/ILx3V0PNhRSVRivpJP16xfB8=', vaiTro='Khách Thuê', ngayTao='09/12/2024 20:36:49' }
+2
+TaiKhoan{ maTaiKhoan='2', email='ldtien.210804@gmail.com', password='Q/7K7qmxtJGw8B/Ahrf1kQ==:sZxUgX1RkCR25PqkhOD588MWKEM9+50Uk4akbHLsKFw=', vaiTro='Chủ Nhà', ngayTao='04/12/2024 23:57:05' }
+2
+TaiKhoan{ maTaiKhoan='2', email='ldtien.210804@gmail.com', password='Q/7K7qmxtJGw8B/Ahrf1kQ==:sZxUgX1RkCR25PqkhOD588MWKEM9+50Uk4akbHLsKFw=', vaiTro='Chủ Nhà', ngayTao='04/12/2024 23:57:05' }
+2
+TaiKhoan{ maTaiKhoan='2', email='ldtien.210804@gmail.com', password='Q/7K7qmxtJGw8B/Ahrf1kQ==:sZxUgX1RkCR25PqkhOD588MWKEM9+50Uk4akbHLsKFw=', vaiTro='Chủ Nhà', ngayTao='04/12/2024 23:57:05' }
+2
+TaiKhoan{ maTaiKhoan='2', email='ldtien.210804@gmail.com', password='Q/7K7qmxtJGw8B/Ahrf1kQ==:sZxUgX1RkCR25PqkhOD588MWKEM9+50Uk4akbHLsKFw=', vaiTro='Chủ Nhà', ngayTao='04/12/2024 23:57:05' }
+2
+TaiKhoan{ maTaiKhoan='2', email='ldtien.210804@gmail.com', password='Q/7K7qmxtJGw8B/Ahrf1kQ==:sZxUgX1RkCR25PqkhOD588MWKEM9+50Uk4akbHLsKFw=', vaiTro='Chủ Nhà', ngayTao='04/12/2024 23:57:05' }
+2
+TaiKhoan{ maTaiKhoan='2', email='ldtien.210804@gmail.com', password='Q/7K7qmxtJGw8B/Ahrf1kQ==:sZxUgX1RkCR25PqkhOD588MWKEM9+50Uk4akbHLsKFw=', vaiTro='Chủ Nhà', ngayTao='04/12/2024 23:57:05' }
+2
+TaiKhoan{ maTaiKhoan='2', email='ldtien.210804@gmail.com', password='Q/7K7qmxtJGw8B/Ahrf1kQ==:sZxUgX1RkCR25PqkhOD588MWKEM9+50Uk4akbHLsKFw=', vaiTro='Chủ Nhà', ngayTao='04/12/2024 23:57:05' }

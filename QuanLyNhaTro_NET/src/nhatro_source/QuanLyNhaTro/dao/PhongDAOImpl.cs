@@ -14,7 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public PhongDAOImpl()
         {
             _connection = DatabaseConnection.GetConnection();
-            _connection.Open();
+            
         }
 
         public void AddPhong(string tenPhong, int maKieuPhong, int maNhaTro, string urlImage)
@@ -141,7 +141,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                 {
                     if (reader.Read())
                     {
-                        return reader.GetDouble("giaPhong");
+                        return Convert.ToDouble(reader.GetDecimal("giaPhong"));
                     }
                 }
             }

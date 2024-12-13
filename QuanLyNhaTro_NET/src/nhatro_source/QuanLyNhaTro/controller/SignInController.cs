@@ -13,7 +13,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
     {
         private readonly SignInForm signInForm;
         private readonly ITaiKhoanDAO taiKhoanDAO;
-
+        private SignUpForm signUpForm;
         public SignInController(SignInForm signInForm)
         {
             this.signInForm = signInForm;
@@ -66,6 +66,12 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
                     TaiKhoan tk = taiKhoanDAO.GetTaiKhoan(email);
                     Constant.TaiKhoan = tk;
                     Constant.Role = tk.VaiTro;
+                    using (StreamWriter writer = new StreamWriter("D:\\MyProjects\\QuanLyNhaTro_NET\\QuanLyNhaTro_NET\\Resources\\read.txt", true)) // `true` để ghi thêm (append)
+                    {
+                        writer.WriteLine(Constant.TaiKhoan.MaTaiKhoan);
+                        writer.WriteLine(Constant.TaiKhoan.ToString());
+
+                    }
                     MessageBox.Show("Đăng nhập thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (taiKhoanDAO.CheckLogin(email))
                     {
@@ -76,7 +82,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
                     }
                     else
                     {
-                        signInForm.Dispose();
+                        signInForm.Hide();
                         MenuForm menuForm = new MenuForm();
                         menuForm.Show();
                     }
@@ -90,8 +96,11 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
             {
                 
                 signInForm.Hide();
-                SignUpForm signUpForm = new SignUpForm();
-                signUpForm.FormClosed += (s, args) => signInForm.Show();
+                if (signUpForm == null || signUpForm.IsDisposed)
+                { 
+                    signUpForm = new SignUpForm();
+                    signUpForm.FormClosed += (s, args) => signInForm.Show();
+                }
                 signUpForm.Show();
             }
             catch (Exception ex)

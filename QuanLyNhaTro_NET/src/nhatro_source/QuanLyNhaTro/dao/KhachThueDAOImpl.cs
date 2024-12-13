@@ -70,13 +70,13 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
             return khachThue;
         }
 
-        public KhachThue GetKhachThue(int maTaiKhoan)
+        public KhachThue GetKhachThue(int maKhachThue)
         {
             var khachThue = new KhachThue();
-            string query = "select * from KhachThue where maTaiKhoan = @maTaiKhoan";
+            string query = "select * from KhachThue where maKhachThue = @maKhachThue";
             using (var cmd = new SqlCommand(query, _connection))
             {
-                cmd.Parameters.AddWithValue("@maTaiKhoan", maTaiKhoan);
+                cmd.Parameters.AddWithValue("@maKhachThue", maKhachThue);
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
@@ -208,6 +208,36 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                 }
             }
             return khachThueList;
+        }
+
+        public void UpdateKhachThueByMa(int maKhachThue, string maCCCD, string ten, DateTime ngaySinh, string gioiTinh, string soDienThoai, string diaChi, int maTaiKhoan)
+        {
+            string query = "update KhachThue set maCCCD = @maCCCD, tenKhach = @ten, ngaySinh = @ngaySinh, gioiTinh = @gioiTinh, soDienThoai = @soDienThoai, diaChi = @diaChi, maTaiKhoan = @maTaiKhoan where maKhachThue = @maKhachThue";
+            using (var transaction = _connection.BeginTransaction())
+            {
+                try
+                {
+                    using (var cmd = new SqlCommand(query, _connection, transaction))
+                    {   
+                        cmd.Parameters.AddWithValue("@maCCCD", maCCCD);
+                        cmd.Parameters.AddWithValue("@ten", ten);
+                        cmd.Parameters.AddWithValue("@ngaySinh", ngaySinh);
+                        cmd.Parameters.AddWithValue("@gioiTinh", gioiTinh);
+                        cmd.Parameters.AddWithValue("@soDienThoai", soDienThoai);
+                        cmd.Parameters.AddWithValue("@diaChi", diaChi);
+                        cmd.Parameters.AddWithValue("@maTaiKhoan", maTaiKhoan);
+                        cmd.Parameters.AddWithValue("@maKhachThue", maKhachThue);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    transaction.Commit();
+                }
+                catch (Exception e)
+                {
+                    transaction.Rollback();
+                    throw new Exception("Chỉnh sửa không thành công", e);
+                }
+            }
         }
     }
 }

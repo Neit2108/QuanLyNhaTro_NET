@@ -24,7 +24,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.controller
         {
             string cccd = signUpInforForm.CccdTextBox.Text;
             string name = signUpInforForm.NameTextBox.Text;
-            string birthday = signUpInforForm.BirthdayTextBox.Text;
+            string birthday = signUpInforForm.BirthdayDatePicker.Text;
             birthday = Authenticator.NormalizeDate(birthday);
             string gender = signUpInforForm.GenderComboBox.Text;
             string phoneNumber = signUpInforForm.PhoneNumberTextBox.Text;

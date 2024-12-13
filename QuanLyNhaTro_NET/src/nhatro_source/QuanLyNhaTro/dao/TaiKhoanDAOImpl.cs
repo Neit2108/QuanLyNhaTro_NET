@@ -144,7 +144,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                 {
                     if (reader.Read())
                     {
-                        return reader.GetInt32("maChuNha");
+                        return reader.GetInt32(0);
                     }
                 }
             }
@@ -161,7 +161,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                 {
                     if (reader.Read())
                     {
-                        return reader.GetInt32("maKhachThue");
+                        return reader.GetInt32(0);
                     }
                 }
             }
@@ -178,7 +178,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                 {
                     if (reader.Read())
                     {
-                        return reader.GetInt32("maAdmin");
+                        return reader.GetInt32(0);
                     }
                 }
             }

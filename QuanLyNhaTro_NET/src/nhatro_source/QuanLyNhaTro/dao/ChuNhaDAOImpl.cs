@@ -14,7 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public ChuNhaDAOImpl()
         {
             _connection = DatabaseConnection.GetConnection();
-            _connection.Open();
+            
         }
 
         public void AddChuNha(string maCCCD, string ten, DateTime ngaySinh, string gioiTinh, string soDienThoai, string diaChi, int maTaiKhoan)
@@ -142,6 +142,35 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                         cmd.Parameters.AddWithValue("@maTaiKhoan", maTaiKhoan);
                         cmd.Parameters.AddWithValue("@maCCCD", maCCCD);
 
+                        cmd.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                }
+                catch (SqlException e)
+                {
+                    transaction.Rollback();
+                    throw new Exception("An error occurred while updating a ChuNha", e);
+                }
+            }
+        }
+
+        public void UpdateChuNhaByMa(int maChuNha, string maCCCD, string ten, DateTime ngaySinh, string gioiTinh, string soDienThoai, string diaChi, int maTaiKhoan)
+        {
+            string query = "UPDATE ChuNha SET maCCCD = @maCCCD, tenChuNha = @ten, ngaySinh = @ngaySinh, gioiTinh = @gioiTinh, soDienThoai = @soDienThoai, diaChi = @diaChi, maTaiKhoan = @maTaiKhoan WHERE maChuNha = @maChuNha";
+            using (var transaction = _connection.BeginTransaction())
+            {
+                try
+                {
+                    using (var cmd = new SqlCommand(query, _connection, transaction))
+                    {   
+                        cmd.Parameters.AddWithValue("@maCCCD", maCCCD);
+                        cmd.Parameters.AddWithValue("@ten", ten);
+                        cmd.Parameters.AddWithValue("@ngaySinh", ngaySinh);
+                        cmd.Parameters.AddWithValue("@gioiTinh", gioiTinh);
+                        cmd.Parameters.AddWithValue("@soDienThoai", soDienThoai);
+                        cmd.Parameters.AddWithValue("@diaChi", diaChi);
+                        cmd.Parameters.AddWithValue("@maTaiKhoan", maTaiKhoan);
+                        cmd.Parameters.AddWithValue("@maChuNha", maChuNha);
                         cmd.ExecuteNonQuery();
                         transaction.Commit();
                     }

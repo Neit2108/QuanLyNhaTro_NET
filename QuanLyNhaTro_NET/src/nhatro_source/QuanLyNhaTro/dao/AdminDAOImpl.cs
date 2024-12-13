@@ -105,5 +105,32 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                 }
             }
         }
+
+        public Admin GetAdminByMa(int maAdmin)
+        {
+            string query = "SELECT * FROM admin WHERE maAdmin = @maAdmin";
+            using (var cmd = new SqlCommand(query, _conn))
+            {
+                cmd.Parameters.AddWithValue("@maAdmin", maAdmin);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Admin
+                        {
+                            MaAdmin = reader.GetInt32("maAdmin"),
+                            MaCCCD = reader.GetString("maCCCD"),
+                            Ten = reader.GetString("tenAdmin"),
+                            GioiTinh = reader.GetString("gioiTinh"),
+                            NgaySinh = reader.GetDateTime("ngaySinh"),
+                            SoDienThoai = reader.GetString("soDienThoai"),
+                            DiaChi = reader.GetString("diaChi"),
+                            MaTaiKhoan = reader.GetInt32("maTaiKhoan")
+                        };
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

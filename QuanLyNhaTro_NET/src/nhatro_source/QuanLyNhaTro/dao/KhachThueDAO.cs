@@ -13,5 +13,6 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         void UpdateKhachThue(string maCCCD, string ten, DateTime ngaySinh, string gioiTinh, string soDienThoai, string diaChi, int maTaiKhoan);
         void DeleteKhachThue(string maCCCD);
         List<KhachThue> GetKhachThueByMaChuNha(int maChuNha);
+        void UpdateKhachThueByMa(int maKhachThue, String maCCCD, String ten, DateTime ngaySinh, String gioiTinh, String soDienThoai, String diaChi, int maTaiKhoan);
     }
 }

@@ -14,7 +14,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         public KieuPhongDAOImpl()
         {
             _connection = DatabaseConnection.GetConnection();
-            _connection.Open();
+            
         }
 
         public void AddKieuPhong(string loaiPhong, double dienTich, double giaPhong)
@@ -66,8 +66,8 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
                         {
                             MaKieuPhong = reader.GetInt32("maKieuPhong"),
                             LoaiPhong = reader.GetString("loaiPhong"),
-                            DienTich = reader.GetDouble("dienTich"),
-                            GiaPhong = reader.GetDouble("giaPhong"),
+                            DienTich = Convert.ToDouble(reader.GetDecimal("dienTich")),
+                            GiaPhong = Convert.ToDouble(reader.GetDecimal("giaPhong")),
                             NgayTao = reader.GetDateTime("ngayTao")
                         };
                     }

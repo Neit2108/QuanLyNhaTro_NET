@@ -11,5 +11,6 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.dao
         ChuNha GetChuNhaByCCCD(string maCCCD);
         List<ChuNha> GetAllChuNha();
         void UpdateChuNha(string maCCCD, string ten, DateTime ngaySinh, string gioiTinh, string soDienThoai, string diaChi, int maTaiKhoan);
+        void UpdateChuNhaByMa(int maChuNha, String maCCCD, String ten, DateTime ngaySinh, String gioiTinh, String soDienThoai, String diaChi, int maTaiKhoan);
     }
 }

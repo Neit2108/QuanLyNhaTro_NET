@@ -23,6 +23,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
         private Label addressLabel;
         private ComboBox genderComboBox;
         private Button submitButton;
+        private DateTimePicker birthdayDatePicker;
 
         protected override void Dispose(bool disposing)
         {
@@ -50,6 +51,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             addressLabel = new Label();
             addressTextBox = new TextBox();
             submitButton = new Button();
+            birthdayDatePicker = new DateTimePicker();
             mainPanel.SuspendLayout();
             tableLayout.SuspendLayout();
             SuspendLayout();
@@ -81,7 +83,8 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
 
             // Set common width for TextBoxes and ComboBox
             int commonWidth = 200;
-
+            birthdayDatePicker.Width = commonWidth;
+            birthdayDatePicker.Format = DateTimePickerFormat.Short;
             cccdTextBox.Width = commonWidth;
             nameTextBox.Width = commonWidth;
             birthdayTextBox.Width = commonWidth;
@@ -97,7 +100,7 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
             tableLayout.Controls.Add(nameLabel, 0, 1);
             tableLayout.Controls.Add(nameTextBox, 1, 1);
             tableLayout.Controls.Add(birthdayLabel, 0, 2);
-            tableLayout.Controls.Add(birthdayTextBox, 1, 2);
+            tableLayout.Controls.Add(birthdayDatePicker, 1, 2);
             tableLayout.Controls.Add(genderLabel, 0, 3);
             tableLayout.Controls.Add(genderComboBox, 1, 3);
             tableLayout.Controls.Add(phoneNumberLabel, 0, 4);
@@ -172,5 +175,6 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
         public TextBox PhoneNumberTextBox { get => phoneNumberTextBox; set => phoneNumberTextBox = value; }
         public TextBox AddressTextBox { get => addressTextBox; set => addressTextBox = value; }
         public Button SubmitButton { get => submitButton; set => submitButton = value; }
+        public DateTimePicker BirthdayDatePicker { get => birthdayDatePicker; set => birthdayDatePicker = value; }
     }
 }

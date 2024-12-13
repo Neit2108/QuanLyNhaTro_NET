@@ -5,16 +5,6 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
 {
     partial class SignInForm : Form
     {
-        //public Label labelTitle { get; set; }
-        //public Label labelEmail { get; set; }
-        //public Label labelPassword { get; set; }
-        //public TextBox textBoxEmail { get; set; }
-        //public TextBox textBoxPassword { get; set; }
-        //public Button buttonSignIn { get; set; }
-        //public Panel panelLeft { get; set; }
-        //public Label labelSignUpPrompt { get; set; }
-        //public LinkLabel linkSignUp { get; set; }
-
         private Label labelTitle;
         private Label labelEmail;
         private Label labelPassword;
@@ -25,63 +15,54 @@ namespace QuanLyNhaTro_NET.src.nhatro_source.QuanLyNhaTro.view
         private Label labelSignUpPrompt;
         private LinkLabel linkSignUp;
 
-        // Getter và setter cho labelTitle
         public Label LabelTitle
         {
             get { return labelTitle; }
             set { labelTitle = value; }
         }
-
-        // Getter và setter cho labelEmail
+    
         public Label LabelEmail
         {
             get { return labelEmail; }
             set { labelEmail = value; }
         }
 
-        // Getter và setter cho labelPassword
         public Label LabelPassword
         {
             get { return labelPassword; }
             set { labelPassword = value; }
         }
 
-        // Getter và setter cho textBoxEmail
         public TextBox TextBoxEmail
         {
             get { return textBoxEmail; }
             set { textBoxEmail = value; }
         }
 
-        // Getter và setter cho textBoxPassword
         public TextBox TextBoxPassword
         {
             get { return textBoxPassword; }
             set { textBoxPassword = value; }
         }
 
-        // Getter và setter cho buttonSignIn
         public Button ButtonSignIn
         {
             get { return buttonSignIn; }
             set { buttonSignIn = value; }
         }
 
-        // Getter và setter cho panelLeft
         public Panel PanelLeft
         {
             get { return panelLeft; }
             set { panelLeft = value; }
         }
 
-        // Getter và setter cho labelSignUpPrompt
         public Label LabelSignUpPrompt
         {
             get { return labelSignUpPrompt; }
             set { labelSignUpPrompt = value; }
         }
 
-        // Getter và setter cho linkSignUp
         public LinkLabel LinkSignUp
         {
             get { return linkSignUp; }

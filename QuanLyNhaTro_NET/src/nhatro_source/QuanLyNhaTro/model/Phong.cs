@@ -2,12 +2,49 @@
 {
     public class Phong
     {
-        public int MaPhong { get; set; }
-        public string TenPhong { get; set; }
-        public int MaKieuPhong { get; set; }
-        public int MaNhaTro { get; set; }
-        public string TrangThai { get; set; }
-        public string UrlImage { get; set; }
+        private int maPhong;
+        private string tenPhong;
+        private int maKieuPhong;
+        private int maNhaTro;
+        private string trangThai;
+        private string urlImage;
+
+        public int MaPhong
+        {
+            get { return maPhong; }
+            set { maPhong = value; }
+        }
+
+        public string TenPhong
+        {
+            get { return tenPhong; }
+            set { tenPhong = value; }
+        }
+
+        public int MaKieuPhong
+        {
+            get { return maKieuPhong; }
+            set { maKieuPhong = value; }
+        }
+
+        public int MaNhaTro
+        {
+            get { return maNhaTro; }
+            set { maNhaTro = value; }
+        }
+
+        public string TrangThai
+        {
+            get { return trangThai; }
+            set { trangThai = value; }
+        }
+
+        public string UrlImage
+        {
+            get { return urlImage; }
+            set { urlImage = value; }
+        }
+
 
         public Phong() { }
 
